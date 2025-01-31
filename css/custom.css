@@ -1,0 +1,111 @@
+:root {
+    --primary: #001F3F;
+    --secondary: #0074D9;
+    --success: #27ae60;
+    --danger: #e63946;
+    --danger-hover: #c82333;
+    --light-bg: #f5f5f5;
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+}
+
+.main-content {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.chart-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--light-bg);
+    padding: 15px;
+}
+
+.expense-item {
+    transition: transform 0.2s ease;
+    background: var(--light-bg);
+}
+
+.expense-item:hover {
+    transform: translateX(5px);
+    background: #e8e8e8;
+}
+
+.alert-position {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    min-width: 300px;
+}
+
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+.list-group-item {
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    background: var(--light-bg);
+}
+
+.card-title {
+    color: var(--text-dark);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.3);
+    border-color: var(--secondary);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+.btn-primary:hover {
+    background: #0066cc;
+    border-color: #0056b3;
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+.btn-danger:hover {
+    background: var(--danger-hover);
+    border-color: var(--danger-hover);
+}
+
+/* Chart tooltip fix */
+svg > g > g:last-child { 
+    pointer-events: none;
+}
+
+.trash-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.delete-btn:hover .trash-icon {
+    transform: scale(1.2);
+}
+
